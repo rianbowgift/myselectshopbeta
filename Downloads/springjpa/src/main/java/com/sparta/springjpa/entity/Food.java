@@ -18,14 +18,14 @@ public class Food {
     @Column(nullable = false)
     private String foodName;
     @Column(nullable = false)
-    private String price;
+    private int price;
 
 
                                 //오더 클래스와의 join에서
     @OneToMany(mappedBy = "food", fetch = FetchType.EAGER)//연관관계의 주인을 지정한다. 조인했을때 주인이 누군지 명시
     private List<Orders> orders = new ArrayList<>();
 
-    public Food(String foodName, String price) {
+    public Food(String foodName, int price) {
         this.foodName = foodName;
         this.price = price;
     }
